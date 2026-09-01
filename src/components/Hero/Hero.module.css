@@ -44,3 +44,6 @@
   border-radius: 200px;
   letter-spacing: -0.01em;
 }
+.btn:hover {
+  background-color: #6d7b75;
+}

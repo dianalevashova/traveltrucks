@@ -6,10 +6,11 @@ import type {
   CampersFilters,
   BookingRequest,
   BookingResponse,
-} from '../../types/camper';
+} from '../types/camper';
 
 export interface CampersQueryParams {
   page?: number;
+  perPage?: number;
   location?: string;
   form?: string;
   engine?: string;
