@@ -6,7 +6,7 @@ import type {
   CampersFilters,
   BookingRequest,
   BookingResponse,
-} from '../types/camper';
+} from '../../types/camper';
 
 export interface CampersQueryParams {
   page?: number;
