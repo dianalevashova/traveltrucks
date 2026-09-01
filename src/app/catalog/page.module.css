@@ -1,6 +1,19 @@
+.main {
+  padding: 48px 64px 52px 63px;
+}
 .list {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 888px;
+  width: 888px;
+}
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 65px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
