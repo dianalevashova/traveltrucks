@@ -1,0 +1,25 @@
+.header {
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 450px;
+  padding: 28px 64px;
+}
+
+.logo {
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+}
+
+.navLinkActive {
+  color: var(--color-accent);
+}
