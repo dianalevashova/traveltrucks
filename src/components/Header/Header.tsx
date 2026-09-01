@@ -12,9 +12,14 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const isHome = pathname === '/';
 
   return (
-    <header className={styles.header}>
+    <header
+      className={
+        isHome ? styles.header : `${styles.header} ${styles.headerGrey}`
+      }
+    >
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <Icon name="Logo" width={136} height={15} />

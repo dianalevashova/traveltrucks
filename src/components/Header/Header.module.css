@@ -1,6 +1,8 @@
 .header {
 }
-
+.headerGrey {
+  background-color: #f7f7f7;
+}
 .container {
   display: flex;
   align-items: center;
