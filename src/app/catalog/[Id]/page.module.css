@@ -79,11 +79,15 @@
   gap: 8px;
   margin-bottom: 32px;
 }
-
 .amenityTag {
   flex-shrink: 0;
   padding: 12px 18px;
   border-radius: 100px;
   background-color: #f2f4f7;
   text-transform: capitalize;
+}
+.revForm {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
 }
