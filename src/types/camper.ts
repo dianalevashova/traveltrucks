@@ -43,7 +43,7 @@ export interface CampersResponse {
   campers: CamperListItem[];
 }
 
-export interface Image {
+export interface ImageCamper {
   id: string;
   camperId: string;
   thumb: string;
@@ -52,7 +52,7 @@ export interface Image {
 }
 
 export interface CamperDetails extends Omit<CamperListItem, 'coverImage'> {
-  gallery: Image[];
+  gallery: ImageCamper[];
 }
 
 export interface CamperReview {
