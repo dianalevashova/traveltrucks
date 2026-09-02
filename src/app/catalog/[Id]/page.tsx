@@ -7,6 +7,7 @@ import styles from './page.module.css';
 import { useCamperReviews } from '@/hooks/useCamperReview';
 import Reviews from '@/components/Reviews/Reviews';
 import Gallery from '@/components/Gallery/Gallery';
+import FormBooking from '@/components/FormBooking/FormBooking';
 
 const addSpaceBeforeUnit = (value: string) =>
   value.replace(/(\d)([a-zA-Z])/, '$1 $2').replace('/', ' / ');
@@ -85,7 +86,10 @@ export default function CamperDetailsPage() {
           </div>
         </div>
       </div>
-      <Reviews reviews={reviews} />
+      <div className={styles.revForm}>
+        <Reviews reviews={reviews} />
+        <FormBooking camperId={camper.id} />
+      </div>
     </main>
   );
 }
