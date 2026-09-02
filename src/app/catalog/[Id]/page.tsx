@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation';
 import { useCamperId } from '@/hooks/useCamperId';
 import Icon from '@/components/Icon/Icon';
 import styles from './page.module.css';
+import { useCamperReviews } from '@/hooks/useCamperReview';
+import Reviews from '@/components/Reviews/Reviews';
 
 const addSpaceBeforeUnit = (value: string) =>
   value.replace(/(\d)([a-zA-Z])/, '$1 $2').replace('/', ' / ');
@@ -11,6 +13,7 @@ const addSpaceBeforeUnit = (value: string) =>
 export default function CamperDetailsPage() {
   const { Id } = useParams<{ Id: string }>();
   const { data: camper, isLoading, isError } = useCamperId(Id);
+  const { data: reviews } = useCamperReviews(Id);
 
   if (!Id || isLoading) return <p>Loading...</p>;
   if (isError || !camper) return <p>Camper not found</p>;
@@ -76,6 +79,7 @@ export default function CamperDetailsPage() {
           </li>
         </ul>
       </div>
+      <Reviews reviews={reviews} />
     </main>
   );
 }

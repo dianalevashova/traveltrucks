@@ -1,0 +1,55 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 623px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: var(--fw-semibold);
+  line-height: 1.333;
+  color: var(--color-text-primary);
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.nameStar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.reviewCard {
+  padding: 16px;
+  background-color: #f7f7f7;
+  border-radius: 16px;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: var(--color-accent);
+  font-size: 24px;
+  font-weight: var(--fw-semibold);
+  flex-shrink: 0;
+}
+
+.reviewComment {
+  font-weight: var(--fw-regular);
+  color: #475467;
+}
