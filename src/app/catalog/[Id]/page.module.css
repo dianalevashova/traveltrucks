@@ -2,6 +2,18 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 1440px;
+  padding: 64px;
+}
+.mainBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.twoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .section {
   padding: 24px;

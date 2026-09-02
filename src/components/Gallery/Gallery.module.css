@@ -1,0 +1,54 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  width: 638px;
+}
+
+.mainSwiper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.mainImageWrapper {
+  position: relative;
+  width: 638px;
+  height: 505px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.mainImage {
+  object-fit: cover;
+}
+
+.thumbsSwiper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 638px;
+}
+
+.thumbWrapper {
+  position: relative;
+  width: 135px;
+  height: 144px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+:global(.swiper-slide-thumb-active) .thumbWrapper {
+  opacity: 1;
+}
+
+.thumbImage {
+  object-fit: cover;
+}
