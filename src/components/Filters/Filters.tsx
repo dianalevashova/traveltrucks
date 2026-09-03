@@ -5,37 +5,27 @@ import { useCampersFilters } from '@/hooks/useCampersFilters';
 
 import Icon from '@/components/Icon/Icon';
 import styles from './Filters.module.css';
-import { CampersQueryParams } from '@/services/campers';
 
+interface FilterValues {
+  location: string;
+  form: string;
+  engine: string;
+  transmission: string;
+}
 interface FiltersProps {
-  onApply: (filters: Omit<CampersQueryParams, 'page'>) => void;
+  values: FilterValues;
+  onChange: (values: FilterValues) => void;
+  onSearch: () => void;
+  onClear: () => void;
 }
 
-export default function Filters({ onApply }: FiltersProps) {
+export default function Filters({
+  values,
+  onChange,
+  onSearch,
+  onClear,
+}: FiltersProps) {
   const { data: options } = useCampersFilters();
-
-  const [location, setLocation] = useState('');
-  const [form, setForm] = useState('');
-  const [engine, setEngine] = useState('');
-  const [transmission, setTransmission] = useState('');
-
-  const handleSearch = () => {
-    onApply({
-      location: location || undefined,
-      form: form || undefined,
-      engine: engine || undefined,
-      transmission: transmission || undefined,
-    });
-  };
-
-  const handleClear = () => {
-    setLocation('');
-    setForm('');
-    setEngine('');
-    setTransmission('');
-    onApply({});
-  };
-
   return (
     <div className={styles.filters}>
       <div className={styles.field}>
@@ -48,7 +38,7 @@ export default function Filters({ onApply }: FiltersProps) {
             width={16}
             height={16}
             className={
-              location
+              values.location
                 ? `${styles.inputIcon} ${styles.inputIconActive}`
                 : styles.inputIcon
             }
@@ -56,8 +46,8 @@ export default function Filters({ onApply }: FiltersProps) {
           <input
             id="location"
             type="text"
-            value={location}
-            onChange={e => setLocation(e.target.value)}
+            value={values.location}
+            onChange={e => onChange({ ...values, location: e.target.value })}
             placeholder="City"
             className={styles.input}
           />
@@ -75,8 +65,8 @@ export default function Filters({ onApply }: FiltersProps) {
                 type="radio"
                 name="form"
                 value={formOption}
-                checked={form === formOption}
-                onChange={e => setForm(e.target.value)}
+                checked={values.form === formOption}
+                onChange={e => onChange({ ...values, form: e.target.value })}
                 className={styles.radio}
               />
               {formOption.replace('_', ' ')}
@@ -92,8 +82,8 @@ export default function Filters({ onApply }: FiltersProps) {
                 type="radio"
                 name="engine"
                 value={engineOption}
-                checked={engine === engineOption}
-                onChange={e => setEngine(e.target.value)}
+                checked={values.engine === engineOption}
+                onChange={e => onChange({ ...values, engine: e.target.value })}
                 className={styles.radio}
               />
               {engineOption}
@@ -109,8 +99,10 @@ export default function Filters({ onApply }: FiltersProps) {
                 type="radio"
                 name="transmission"
                 value={transmissionOption}
-                checked={transmission === transmissionOption}
-                onChange={e => setTransmission(e.target.value)}
+                checked={values.transmission === transmissionOption}
+                onChange={e =>
+                  onChange({ ...values, transmission: e.target.value })
+                }
                 className={styles.radio}
               />
               {transmissionOption}
@@ -119,10 +111,10 @@ export default function Filters({ onApply }: FiltersProps) {
         </fieldset>
       </div>
 
-      <button type="button" onClick={handleSearch} className={styles.searchBtn}>
+      <button type="button" onClick={onSearch} className={styles.searchBtn}>
         Search
       </button>
-      <button type="button" onClick={handleClear} className={styles.clearBtn}>
+      <button type="button" onClick={onClear} className={styles.clearBtn}>
         <Icon name="close" width={24} height={24} />
         Clear filters
       </button>

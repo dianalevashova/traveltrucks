@@ -7,9 +7,10 @@ import { CamperListItem } from '@/types/camper';
 
 interface CamperItemProps {
   camper: CamperListItem;
+  isPriority?: boolean;
 }
 
-export default function CamperItem({ camper }: CamperItemProps) {
+export default function CamperItem({ camper, isPriority }: CamperItemProps) {
   const {
     id,
     name,
@@ -27,7 +28,14 @@ export default function CamperItem({ camper }: CamperItemProps) {
   return (
     <li className={styles.onecard}>
       <div className={styles.imageWrapper}>
-        <Image src={coverImage} alt={name} fill className={styles.image} />
+        <Image
+          src={coverImage}
+          alt={name}
+          fill
+          className={styles.image}
+          priority={isPriority}
+          sizes="240px"
+        />
       </div>
 
       <div className={styles.info}>
