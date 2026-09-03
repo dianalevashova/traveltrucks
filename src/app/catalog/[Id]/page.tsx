@@ -8,6 +8,7 @@ import { useCamperReviews } from '@/hooks/useCamperReview';
 import Reviews from '@/components/Reviews/Reviews';
 import Gallery from '@/components/Gallery/Gallery';
 import FormBooking from '@/components/FormBooking/FormBooking';
+import Loader from '@/components/Loader/Loader';
 
 const addSpaceBeforeUnit = (value: string) =>
   value.replace(/(\d)([a-zA-Z])/, '$1 $2').replace('/', ' / ');
@@ -17,7 +18,7 @@ export default function CamperDetailsPage() {
   const { data: camper, isLoading, isError } = useCamperId(Id);
   const { data: reviews } = useCamperReviews(Id);
 
-  if (!Id || isLoading) return <p>Loading...</p>;
+  if (!Id || isLoading) return <Loader />;
   if (isError || !camper) return <p>Camper not found</p>;
 
   return (

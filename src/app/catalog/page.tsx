@@ -7,6 +7,8 @@ import LoadMore from '@/components/LoadMore/LoadMore';
 import Filters from '@/components/Filters/Filters';
 import { useState } from 'react';
 import { CampersQueryParams } from '../../services/campers';
+import Loader from '@/components/Loader/Loader';
+import LoaderMoreBtn from '@/components/LoaderMoreBtn/LoaderMoreBtn';
 
 export default function CatalogPage() {
   const [filters, setFilters] = useState<Omit<CampersQueryParams, 'page'>>({});
@@ -25,17 +27,15 @@ export default function CatalogPage() {
     <main className={styles.main}>
       <div className={styles.layout}>
         <Filters onApply={setFilters} />
-
         <div className={styles.content}>
-          {isLoading && <p>Loading...</p>}
+          {isLoading && <Loader />}
           {isError && <p>Something went wrong</p>}
-
           <ul className={styles.list}>
             {campers.map(camper => (
               <CamperItem key={camper.id} camper={camper} />
             ))}
           </ul>
-
+          {isFetchingNextPage && <LoaderMoreBtn />}
           {hasNextPage && (
             <LoadMore
               onClick={() => fetchNextPage()}
