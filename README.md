@@ -1,49 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TravelTrucks
+
+A frontend web application for TravelTrucks - a camper van rental company. Users
+can browse a catalog of campers, filter them by location, body type, engine, and
+transmission, view detailed information about each camper (specs, gallery,
+reviews), and submit a booking request.
+
+Live demo: https://traveltrucks-rosy-seven.vercel.app/
+
+## Features
+
+- Home page with a hero banner and a call-to-action leading to the catalog
+- Catalog page
+  - Camper list fetched from the backend with infinite pagination (Load More)
+  - Filtering by location (text), camper form, engine type, and transmission
+    (all backend-driven via query parameters)
+  - Empty state when no campers match the selected filters
+- Camper details page (opens in a new tab)
+  - Full camper specifications and amenities
+  - Image gallery with a synced thumbnail strip
+  - Customer reviews with a 5-star rating display
+  - Booking request form with validation and a success/error notification
+- Loading indicators for all asynchronous requests
+
+## Tech Stack
+
+- Next.js (App Router) + TypeScript
+- TanStack Query - data fetching, caching, and useInfiniteQuery for pagination
+- Formik + Yup - booking form and validation
+- Swiper - image gallery
+- iziToast - booking success/error notifications
+- React Icons + a custom SVG sprite for icons
+- CSS Modules for styling
+- Axios for HTTP requests
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js 18+ and npm
+
+### Installation
+
+git clone https://github.com/dianalevashova/traveltrucks.git cd travel-trucks
+npm install
+
+### Running locally
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+The app will be available at http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page
-auto-updates as you edit the file.
+### Building for production
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-to automatically optimize and load [Geist](https://vercel.com/font), a new font
-family for Vercel.
+npm run build npm run start
 
-## Learn More
+### Linting and formatting
 
-To learn more about Next.js, take a look at the following resources:
+npm run lint npm run format
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js) - your
-feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
-
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+src/ app/ - Next.js App Router pages page.tsx - Home page catalog/ - Catalog
+page catalog/[Id]/ - Camper details page components/ - Reusable UI components
+hooks/ - Custom React Query hooks services/ - API layer (axios instance,
+endpoints) types/
