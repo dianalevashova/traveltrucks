@@ -10,6 +10,7 @@ export default function Hero() {
         alt="Camper van at sunset by the lake"
         fill
         priority
+        sizes="100vw"
         className={styles.heroImage}
       />
 
