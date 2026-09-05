@@ -126,3 +126,20 @@
   border-radius: 200px;
   color: var(--color-text-primary);
 }
+@media (max-width: 768px) {
+  .filters {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .filters {
+    padding: 16px;
+  }
+  .inputWrapper {
+    margin-bottom: 24px;
+  }
+  .allFilters {
+    margin-bottom: 24px;
+  }
+}

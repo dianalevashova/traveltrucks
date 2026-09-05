@@ -4,14 +4,12 @@
   gap: 24px;
   max-width: 623px;
 }
-
 .sectionTitle {
   font-size: 24px;
   font-weight: var(--fw-semibold);
   line-height: 1.333;
   color: var(--color-text-primary);
 }
-
 .reviewsList {
   display: flex;
   flex-direction: column;
@@ -27,14 +25,12 @@
   background-color: #f7f7f7;
   border-radius: 16px;
 }
-
 .reviewHeader {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
 }
-
 .avatar {
   display: flex;
   align-items: center;
@@ -48,8 +44,23 @@
   font-weight: var(--fw-semibold);
   flex-shrink: 0;
 }
-
 .reviewComment {
   font-weight: var(--fw-regular);
   color: #475467;
+}
+@media (max-width: 768px) {
+  .section {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .reviewCard {
+    padding: 12px;
+  }
 }

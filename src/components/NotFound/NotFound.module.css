@@ -37,3 +37,26 @@
   border-radius: 200px;
   color: #ffffff;
 }
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 32px 24px;
+  }
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .clearBtn,
+  .viewAllBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    padding: 24px 16px;
+  }
+  .illustration {
+    max-width: 200px;
+  }
+}

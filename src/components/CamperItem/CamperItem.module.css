@@ -5,7 +5,6 @@
   background-color: #f7f7f7;
   border-radius: 16px;
 }
-
 .imageWrapper {
   position: relative;
   flex-shrink: 0;
@@ -14,45 +13,38 @@
   border-radius: 16px;
   overflow: hidden;
 }
-
 .image {
   object-fit: cover;
 }
-
 .info {
   display: flex;
   flex-direction: column;
   min-width: 0;
   max-width: 524px;
 }
-
 .title {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 8px;
 }
-
 .name,
 .price {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.333;
 }
-
 .icons {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
 .rating,
 .location {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-
 .basicInfo {
   display: flex;
   flex-direction: column;
@@ -64,13 +56,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-
 .tag {
   display: flex;
   align-items: center;
@@ -79,7 +69,6 @@
   background-color: #f2f4f7;
   border-radius: 100px;
 }
-
 .showMore {
   display: inline-flex;
   align-items: center;
@@ -92,4 +81,38 @@
 }
 .showMore:hover {
   background-color: #6d7b75;
+}
+@media (max-width: 768px) {
+  .onecard {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    max-width: 720px;
+  }
+  .imageWrapper {
+    width: 100%;
+    height: 240px;
+  }
+  .info {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .onecard {
+    padding: 12px;
+    max-width: 370px;
+  }
+  .name,
+  .price {
+    font-size: 20px;
+  }
+  .icons {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .showMore {
+    width: 100%;
+    padding: 14px 24px;
+  }
 }

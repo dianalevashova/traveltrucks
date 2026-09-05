@@ -52,3 +52,26 @@
 .thumbImage {
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  .gallery {
+    width: 100%;
+  }
+  .mainImageWrapper {
+    width: 100%;
+    height: 380px;
+  }
+  .thumbWrapper {
+    width: 100px;
+    height: 106px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mainImageWrapper {
+    height: 280px;
+  }
+  .thumbWrapper {
+    width: 70px;
+    height: 75px;
+  }
+}

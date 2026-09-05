@@ -7,11 +7,9 @@
   align-items: flex-start;
   padding-top: 195px;
 }
-
 .heroImage {
   object-fit: cover;
 }
-
 .content {
   position: relative;
   max-width: 600px;
@@ -19,7 +17,6 @@
   color: #ffffff;
   z-index: 1;
 }
-
 .title {
   padding-bottom: 16px;
   font-weight: var(--fw-semibold);
@@ -27,7 +24,6 @@
   line-height: 1.2;
   color: #f7f7f7;
 }
-
 .text {
   padding-bottom: 40px;
   font-weight: var(--fw-semibold);
@@ -35,7 +31,6 @@
   line-height: 1.33333;
   color: #f7f7f7;
 }
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -46,4 +41,44 @@
 }
 .btn:hover {
   background-color: #6d7b75;
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 480px;
+    padding-top: 120px;
+  }
+  .content {
+    max-width: 100%;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+  .title {
+    padding-bottom: 28px;
+    font-size: 36px;
+  }
+  .text {
+    font-size: 18px;
+    padding-bottom: 32px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero {
+    height: 580px;
+    padding-top: 100px;
+  }
+  .content {
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .text {
+    font-size: 18px;
+    padding-bottom: 32px;
+  }
+  .btn {
+    padding: 14px 32px;
+  }
 }
