@@ -3,7 +3,6 @@
 }
 .container {
   display: flex;
-  align-items: center;
   gap: 450px;
   padding: 28px 64px;
 }
@@ -30,5 +29,10 @@
 
   .nav {
     gap: 16px;
+  }
+}
+@media (min-width: 1441px) {
+  .container {
+    justify-content: center;
   }
 }
